@@ -1,81 +1,104 @@
 ---
-// Datos Estructurados para Google (SEO Corporativo)
-const locations = [
-  {
-    zona: "Zona 10",
-    edificio: "Business Center Torre I",
-    direccion: "Avenida Reforma 12-01, Ciudad de Guatemala",
-    descripcion: "Ubicación estratégica en el distrito financiero, ideal para reuniones de alto nivel y presencia corporativa.",
-    wazeUrl: "https://waze.com/ul?q=Avenida%20Reforma%20Guatemala"
-  },
-  {
-    zona: "Zona 14",
-    edificio: "Europlaza World Business Center",
-    direccion: "5ta Avenida 5-55, Ciudad de Guatemala",
-    descripcion: "Privacidad y exclusividad en la zona más prestigiosa de la ciudad. Espacios diseñados para consultores y directivos.",
-    wazeUrl: "https://waze.com/ul?q=Europlaza%20Guatemala"
-  }
-];
+import Layout from '../layouts/Layout.astro';
+// Puedes importar componentes si creas archivos separados (ej. import Header from '../components/Header.astro';)
 ---
 
-<section id="ubicaciones" class="py-24 bg-[#f8fafc]">
-  <div class="max-w-7xl mx-auto px-6">
-    
-    <div class="flex flex-col md:flex-row justify-between items-end mb-16 border-l-4 border-[#1e293b] pl-6">
-      <div class="max-w-2xl">
-        <h2 class="text-sm uppercase tracking-[0.2em] text-[#64748b] font-semibold mb-2">Presencia Local</h2>
-        <p class="text-4xl font-serif text-[#1e293b] leading-tight">
-          Ubicaciones estratégicas para <br/> 
-          <span class="italic text-[#94a3b8]">empresas de clase mundial.</span>
-        </p>
+<Layout
+  title="Cowork Guatemala | Espacios de Trabajo Flexibles y Modernos"
+  description="Descubre el futuro del trabajo en Cowork Guatemala. Oficinas flexibles, tecnología avanzada y comunidad vibrante en el corazón de Guatemala."
+  keywords="coworking Guatemala, oficinas compartidas Guatemala, espacios de trabajo flexibles, oficinas modernas, alquiler salas reuniones, comunidad emprendedores Guatemala, Zona 10, Zona 4"
+  ogTitle="Cowork Guatemala: El Futuro del Trabajo Comienza Aquí"
+  ogDescription="Espacios flexibles, tecnología de punta y comunidad en el corazón de Guatemala."
+  ogImage="https://coworkguatemala.com/hero-cowork-gt.jpg" // Asegúrate de tener esta imagen en tu carpeta public/
+  ogUrl="https://coworkguatemala.com/"
+>
+  <header class="bg-white shadow-sm py-4 px-6 md:px-12 border-b border-gray-100">
+    <nav class="max-w-7xl mx-auto flex justify-between items-center">
+      <a href="/" class="text-2xl font-bold text-gray-900 tracking-tight">
+        COWORK <span class="text-blue-600">GUATEMALA</span>
+      </a>
+      <div class="hidden md:flex space-x-8">
+        <a href="#ubicaciones" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Ubicaciones</a>
+        <a href="#planes" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Planes</a>
+        <a href="#servicios" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Servicios</a>
+        <a href="#contacto" class="bg-blue-600 text-white px-5 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors">Contacto</a>
       </div>
-      <div class="hidden md:block">
-        <p class="text-slate-500 text-sm max-w-xs text-right">
-          Nuestras sedes están seleccionadas bajo los más altos estándares de seguridad y conectividad.
-        </p>
-      </div>
-    </div>
+      <button class="md:hidden text-gray-600 text-2xl">☰</button>
+    </nav>
+  </header>
 
-    <div class="grid md:grid-cols-2 gap-12">
-      {locations.map((loc) => (
-        <div class="group bg-white border border-slate-200 shadow-sm hover:shadow-2xl hover:border-slate-300 transition-all duration-500 rounded-none overflow-hidden">
-          <div class="aspect-video bg-[#1e293b] overflow-hidden relative">
-            <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
-            <img 
-              src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800" 
-              alt={loc.edificio}
-              class="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-700"
-            />
-          </div>
-          
-          <div class="p-10">
-            <div class="flex justify-between items-start mb-4">
-              <span class="px-3 py-1 bg-slate-100 text-[#1e293b] text-xs font-bold tracking-widest uppercase">
-                {loc.zona}
-              </span>
-            </div>
-            <h3 class="text-2xl font-semibold text-[#0f172a] mb-4">{loc.edificio}</h3>
-            <p class="text-slate-600 mb-6 leading-relaxed text-sm">
-              {loc.descripcion}
-            </p>
-            <div class="pt-6 border-t border-slate-100 flex items-center justify-between">
-              <div class="text-xs text-slate-400 italic">
-                {loc.direccion}
-              </div>
-              <a 
-                href={loc.wazeUrl} 
-                target="_blank" 
-                class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#1e293b] hover:text-blue-700 transition-colors"
-              >
-                Navegar con Waze
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </a>
-            </div>
+  <main>
+    <section class="relative bg-gray-50 py-16 md:py-24 px-6 md:px-12 overflow-hidden">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
+        <div class="md:w-1/2 text-center md:text-left z-10">
+          <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
+            El Futuro del Trabajo <br class="hidden md:block" /><span class="text-blue-600">Comienza Aquí.</span>
+          </h1>
+          <p class="text-lg md:text-xl text-gray-600 mb-10 max-w-lg md:max-w-none mx-auto">
+            Espacios flexibles, tecnología de punta y una vibrante comunidad en el corazón de Guatemala.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+            <a href="#explorar" class="bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-blue-700 transition-colors shadow-lg">
+              Explorar Espacios
+            </a>
+            <a href="https://wa.me/502XXXXXXXX?text=Hola,%20me%20interesa%20reservar%20un%20tour%20en%20Cowork%20Guatemala." 
+               target="_blank" 
+               class="bg-white text-blue-600 border-2 border-blue-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-blue-50 transition-colors shadow-md">
+              Reservar Tour
+            </a>
           </div>
         </div>
-      ))}
+        <div class="md:w-1/2 relative z-0 mt-10 md:mt-0">
+          <img 
+            src="https://images.unsplash.com/photo-1542744095-291d1f67b221?auto=format&fit=crop&q=80&w=1200" 
+            alt="Equipo de trabajo colaborando en Cowork Guatemala" 
+            class="rounded-3xl shadow-2xl w-full h-auto object-cover transform rotate-1 sm:rotate-0" 
+          />
+        </div>
+      </div>
+    </section>
+
+    </main>
+
+  <footer class="bg-gray-900 text-gray-400 py-12 px-6 md:px-12">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div>
+        <h3 class="text-xl font-bold text-white mb-4">COWORK GUATEMALA</h3>
+        <p class="text-sm leading-relaxed">
+          Espacios de trabajo flexibles que impulsan la productividad y la conexión en la capital de Guatemala.
+        </p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold text-white mb-4">Navegación</h3>
+        <ul class="space-y-2">
+          <li><a href="#ubicaciones" class="hover:text-blue-600 transition-colors">Ubicaciones</a></li>
+          <li><a href="#planes" class="hover:text-blue-600 transition-colors">Planes</a></li>
+          <li><a href="#servicios" class="hover:text-blue-600 transition-colors">Servicios</a></li>
+          <li><a href="#contacto" class="hover:text-blue-600 transition-colors">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold text-white mb-4">Contacto</h3>
+        <ul class="space-y-2">
+          <li><a href="tel:+502XXXXXXXX" class="hover:text-blue-600 transition-colors">+502 XXXXXXXX</a></li>
+          <li><a href="mailto:info@coworkguatemala.com" class="hover:text-blue-600 transition-colors">info@coworkguatemala.com</a></li>
+          <li class="flex items-center gap-2">
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>
+            <span>Ciudad de Guatemala, GT</span>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold text-white mb-4">Síguenos</h3>
+        <div class="flex space-x-4">
+          <a href="#" class="text-gray-400 hover:text-blue-600 transition-colors">Facebook</a>
+          <a href="#" class="text-gray-400 hover:text-blue-600 transition-colors">LinkedIn</a>
+          <a href="#" class="text-gray-400 hover:text-blue-600 transition-colors">Instagram</a>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+    <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-500">
+      &copy; {new Date().getFullYear()} Cowork Guatemala. Todos los derechos reservados.
+    </div>
+  </footer>
+</Layout>

@@ -1,0 +1,52 @@
+---
+interface Props {
+	title: string;
+	description: string;
+	keywords: string;
+	ogTitle?: string;
+	ogDescription?: string;
+	ogImage?: string;
+	ogUrl?: string;
+}
+
+const { 
+	title, 
+	description, 
+	keywords, 
+	ogTitle = title, 
+	ogDescription = description, 
+	ogImage = 'https://coworkguatemala.com/og-image.jpg', // Imagen por defecto para redes sociales
+	ogUrl = 'https://coworkguatemala.com/' // URL por defecto
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es-GT">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta name="keywords" content={keywords} />
+		<link rel="canonical" href={ogUrl} />
+
+		<meta property="og:title" content={ogTitle} />
+		<meta property="og:description" content={ogDescription} />
+		<meta property="og:image" content={ogImage} />
+		<meta property="og:url" content={ogUrl} />
+		<meta property="og:type" content="website" />
+		<meta property="og:locale" content="es_GT" />
+
+		<meta name="geo.region" content="GT" />
+		<meta name="geo.placename" content="Ciudad de Guatemala" />
+		<meta name="geo.position" content="14.6349; -90.5069" />
+		<meta name="ICBM" content="14.6349, -90.5069" />
+
+		</head>
+	<body class="bg-white text-gray-800 antialiased font-sans">
+		<slot />
+	</body>
+</html>
