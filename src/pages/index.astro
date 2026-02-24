@@ -1,17 +1,81 @@
 ---
-
+// Datos Estructurados para Google (SEO Corporativo)
+const locations = [
+  {
+    zona: "Zona 10",
+    edificio: "Business Center Torre I",
+    direccion: "Avenida Reforma 12-01, Ciudad de Guatemala",
+    descripcion: "Ubicación estratégica en el distrito financiero, ideal para reuniones de alto nivel y presencia corporativa.",
+    wazeUrl: "https://waze.com/ul?q=Avenida%20Reforma%20Guatemala"
+  },
+  {
+    zona: "Zona 14",
+    edificio: "Europlaza World Business Center",
+    direccion: "5ta Avenida 5-55, Ciudad de Guatemala",
+    descripcion: "Privacidad y exclusividad en la zona más prestigiosa de la ciudad. Espacios diseñados para consultores y directivos.",
+    wazeUrl: "https://waze.com/ul?q=Europlaza%20Guatemala"
+  }
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<section id="ubicaciones" class="py-24 bg-[#f8fafc]">
+  <div class="max-w-7xl mx-auto px-6">
+    
+    <div class="flex flex-col md:flex-row justify-between items-end mb-16 border-l-4 border-[#1e293b] pl-6">
+      <div class="max-w-2xl">
+        <h2 class="text-sm uppercase tracking-[0.2em] text-[#64748b] font-semibold mb-2">Presencia Local</h2>
+        <p class="text-4xl font-serif text-[#1e293b] leading-tight">
+          Ubicaciones estratégicas para <br/> 
+          <span class="italic text-[#94a3b8]">empresas de clase mundial.</span>
+        </p>
+      </div>
+      <div class="hidden md:block">
+        <p class="text-slate-500 text-sm max-w-xs text-right">
+          Nuestras sedes están seleccionadas bajo los más altos estándares de seguridad y conectividad.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-12">
+      {locations.map((loc) => (
+        <div class="group bg-white border border-slate-200 shadow-sm hover:shadow-2xl hover:border-slate-300 transition-all duration-500 rounded-none overflow-hidden">
+          <div class="aspect-video bg-[#1e293b] overflow-hidden relative">
+            <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500"></div>
+            <img 
+              src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800" 
+              alt={loc.edificio}
+              class="w-full h-full object-cover scale-105 group-hover:scale-100 transition-transform duration-700"
+            />
+          </div>
+          
+          <div class="p-10">
+            <div class="flex justify-between items-start mb-4">
+              <span class="px-3 py-1 bg-slate-100 text-[#1e293b] text-xs font-bold tracking-widest uppercase">
+                {loc.zona}
+              </span>
+            </div>
+            <h3 class="text-2xl font-semibold text-[#0f172a] mb-4">{loc.edificio}</h3>
+            <p class="text-slate-600 mb-6 leading-relaxed text-sm">
+              {loc.descripcion}
+            </p>
+            <div class="pt-6 border-t border-slate-100 flex items-center justify-between">
+              <div class="text-xs text-slate-400 italic">
+                {loc.direccion}
+              </div>
+              <a 
+                href={loc.wazeUrl} 
+                target="_blank" 
+                class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#1e293b] hover:text-blue-700 transition-colors"
+              >
+                Navegar con Waze
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
