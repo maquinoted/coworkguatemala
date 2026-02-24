@@ -9,18 +9,13 @@ export default defineConfig({
   // 2. Forzamos la eliminación de la diagonal al final en todas las rutas
   trailingSlash: 'never',
   
-  // 3. Cambiamos el formato de salida para mejor compatibilidad con el sitemap y Vercel
+  // 3. Formato de directorio para URLs limpias en Vercel
   build: {
-    format: 'directory' // Crea carpetas limpias que Vercel sirve sin diagonal
+    format: 'directory'
   },
   
   integrations: [
     tailwind(), 
-    sitemap({
-      // Forzamos que el sitemap use la URL exacta sin diagonal
-      changefreq: 'weekly',
-      priority: 0.7,
-      lastmod: new Date(),
-    })
+    sitemap() // Lo dejamos simple para que Astro use los valores por defecto del 'site'
   ],
 });
