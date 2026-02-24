@@ -3,16 +3,24 @@ import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  // 1. Definimos la URL base sin WWW
+  // 1. Dominio principal sin WWW y sin diagonal al final
   site: 'https://coworkguatemala.com',
   
-  // 2. Forzamos a que NO existan diagonales al final
+  // 2. Forzamos la eliminación de la diagonal al final en todas las rutas
   trailingSlash: 'never',
   
-  // 3. Aseguramos que los enlaces internos se generen correctamente
+  // 3. Cambiamos el formato de salida para mejor compatibilidad con el sitemap y Vercel
   build: {
-    format: 'file' 
+    format: 'directory' // Crea carpetas limpias que Vercel sirve sin diagonal
   },
   
-  integrations: [tailwind(), sitemap()],
+  integrations: [
+    tailwind(), 
+    sitemap({
+      // Forzamos que el sitemap use la URL exacta sin diagonal
+      changefreq: 'weekly',
+      priority: 0.7,
+      lastmod: new Date(),
+    })
+  ],
 });
