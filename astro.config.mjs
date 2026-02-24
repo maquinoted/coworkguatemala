@@ -1,15 +1,18 @@
-// @ts-check
 import { defineConfig } from 'astro/config';
-
-import tailwindcss from '@tailwindcss/vite';
-
+import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 
-// https://astro.build/config
 export default defineConfig({
-  vite: {
-    plugins: [tailwindcss()]
+  // 1. Definimos la URL base sin WWW
+  site: 'https://coworkguatemala.com',
+  
+  // 2. Forzamos a que NO existan diagonales al final
+  trailingSlash: 'never',
+  
+  // 3. Aseguramos que los enlaces internos se generen correctamente
+  build: {
+    format: 'file' 
   },
-
-  integrations: [sitemap()]
+  
+  integrations: [tailwind(), sitemap()],
 });

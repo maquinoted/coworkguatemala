@@ -15,9 +15,12 @@ const {
 	keywords, 
 	ogTitle = title, 
 	ogDescription = description, 
-	ogImage = 'https://coworkguatemala.com/og-image.jpg', // Imagen por defecto para redes sociales
-	ogUrl = 'https://coworkguatemala.com/' // URL por defecto
+	ogImage = 'https://coworkguatemala.com/og-image.jpg',
 } = Astro.props;
+
+// Lógica para forzar HTTPS, Non-WWW y quitar la diagonal final
+const canonicalURL = new URL(Astro.url.pathname, 'https://coworkguatemala.com');
+const formattedCanonical = canonicalURL.href.replace(/\/$/, ""); 
 ---
 
 <!doctype html>
@@ -31,19 +34,20 @@ const {
 		<title>{title}</title>
 		<meta name="description" content={description} />
 		<meta name="keywords" content={keywords} />
-		<link rel="canonical" href={ogUrl} />
+		
+		<link rel="canonical" href={formattedCanonical} />
 
 		<meta property="og:title" content={ogTitle} />
 		<meta property="og:description" content={ogDescription} />
 		<meta property="og:image" content={ogImage} />
-		<meta property="og:url" content={ogUrl} />
+		<meta property="og:url" content={formattedCanonical} />
 		<meta property="og:type" content="website" />
 		<meta property="og:locale" content="es_GT" />
 
 		<meta name="geo.region" content="GT" />
 		<meta name="geo.placename" content="Ciudad de Guatemala" />
-		<meta name="geo.position" content="14.6349; -90.5069" />
-		<meta name="ICBM" content="14.6349, -90.5069" />
+		<meta name="geo.position" content="14.5936;-90.4901" />
+		<meta name="ICBM" content="14.5936, -90.4901" />
 
 		</head>
 	<body class="bg-white text-gray-800 antialiased font-sans">
