@@ -5,72 +5,202 @@ import '../styles/global.css';
 
 <Layout
   title="Coworking en Guatemala | Oficinas y Salas desde USD$15 | Zona 10"
-  description="La mejor alternativa a la renta de oficinas físicas. Coworking en Guatemala con internet simétrico, salas de reuniones y oficinas virtuales desde USD$ 15."
-  keywords="coworking Guatemala, oficinas compartidas Guatemala, espacios de trabajo flexibles, Zona 10"
+  description="La mejor alternativa a la renta de oficinas físicas. Coworking en Guatemala con internet simétrico, salas de reuniones y oficinas virtuales desde USD$ 15. Reduce tus costos operativos y enfócate en crecer hoy mismo"
+  keywords="coworking Guatemala, oficinas compartidas Guatemala, espacios de trabajo flexibles, oficinas modernas, alquiler salas reuniones, comunidad emprendedores Guatemala, Zona 10, Zona 4"
   ogTitle="Cowork en Guatemala: El Futuro del Trabajo Comienza Aquí"
-  ogDescription="Espacios de coworking flexibles en el corazón de Guatemala."
+  ogDescription="Espacios de coworking flexibles, tecnología de punta y comunidad en el corazón de Guatemala."
   ogImage="https://coworkguatemala.com/hero-cowork-gt.jpg"
-  ogUrl="https://coworkguatemala.com"
+  ogUrl="https://coworkguatemala.com/"
 >
-  <script type="application/ld+json" is:inline slot="head">
+  <script type="application/ld+json" slot="head" is:inline>
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "Cowork en Guatemala",
-    "image": "https://coworkguatemala.com/hero-cowork-gt.jpg",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Boulevard Los Proceres 24-69 zona 10, Edificio Zona Pradera, Torre 2, Oficina 1108",
-      "addressLocality": "Ciudad de Guatemala",
-      "addressCountry": "GT"
-    },
-    "telephone": "+50223010800",
-    "priceRange": "$$",
-    "url": "https://coworkguatemala.com"
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://coworkguatemala.com/#organization",
+        "name": "Cowork en Guatemala",
+        "image": "https://coworkguatemala.com/hero-cowork-gt.jpg",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Boulevard Los Proceres 24-69 zona 10, Edificio Zona Pradera, Torre 2, Oficina 1108",
+          "addressLocality": "Ciudad de Guatemala",
+          "addressRegion": "GT",
+          "postalCode": "01010",
+          "addressCountry": "GT"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 14.5936,
+          "longitude": -90.4901
+        },
+        "url": "https://coworkguatemala.com",
+        "telephone": "+50223010800",
+        "priceRange": "$$",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "08:00",
+            "closes": "18:00"
+          }
+        ]
+      },
+      {
+        "@type": "Service",
+        "name": "Coworking por día",
+        "description": "Espacio de trabajo flexible con internet de alta velocidad y café ilimitado en Guatemala.",
+        "offers": {
+          "@type": "Offer",
+          "price": "15.00",
+          "priceCurrency": "USD",
+          "url": "https://coworkguatemala.com"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Cuál es el precio de un pase diario de cowork en Guatemala?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "El precio inicia desde USD$ 15 por día, incluyendo acceso a internet de fibra óptica y café ilimitado."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Ofrecen salas de reuniones en Zona 10?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí, contamos con salas de reuniones profesionales en Edificio Zona Pradera, Torre 2, equipadas con pantallas HD."
+            }
+          }
+        ]
+      }
+    ]
   }
   </script>
 
-  <main class="bg-white">
-    <section class="py-20 px-6 max-w-7xl mx-auto">
-      <div class="flex flex-col md:flex-row items-center gap-12">
+  <a 
+    href="https://wa.me/50223010800?text=estoy%20interesado%20en%20Coworking" 
+    target="_blank" 
+    class="fixed bottom-6 right-6 z-[100] bg-[#25d366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center"
+    aria-label="WhatsApp"
+  >
+    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <header class="bg-white shadow-sm py-4 px-6 md:px-12 border-b border-gray-100 sticky top-0 z-50">
+    <nav class="max-w-7xl mx-auto flex justify-between items-center">
+      <a href="https://coworkguatemala.com" class="text-2xl font-bold text-gray-900 tracking-tight">
+        COWORK EN <span class="text-blue-600">GUATEMALA</span>
+      </a>
+      <div class="hidden md:flex space-x-8">
+        <a href="#planes" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Planes</a>
+        <a href="#servicios" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Servicios</a>
+        <a href="#faq" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Preguntas</a>
+        <a href="https://wa.me/50223010800?text=estoy%20interesado%20en%20Coworking" target="_blank" class="bg-blue-600 text-white px-5 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors">Contacto</a>
+      </div>
+      <button id="menu-btn" class="md:hidden text-gray-600 text-3xl">☰</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="relative bg-gray-50 py-16 md:py-24 px-6 md:px-12 overflow-hidden">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
         <div class="md:w-1/2">
-          <h1 class="text-5xl font-extrabold text-gray-900 mb-6">
+          <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
             Coworking en <span class="text-blue-600">Guatemala</span>
           </h1>
-          <p class="text-xl text-gray-600 mb-8">
-            Tu espacio profesional en Zona 10. Internet de alta velocidad, café ilimitado y el mejor ambiente para hacer crecer tu negocio.
-          </p>
-          <a href="https://wa.me/50223010800" class="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-700 transition-all">
-            Reservar por USD$ 15
-          </a>
+          <div class="space-y-4 text-lg text-gray-600 mb-10">
+            <p>
+              El <strong>coworking en Guatemala</strong> resuelve la necesidad crítica de un espacio profesional fuera del hogar. Internet simétrico y oficinas optimizadas en Zona 10.
+            </p>
+            <p>
+              Más que un <strong>arriendo de oficina</strong>, permite una reducción drástica de costos operativos al eliminar facturas de servicios y mantenimientos.
+            </p>
+          </div>
         </div>
         <div class="md:w-1/2">
-          <img src="https://images.unsplash.com/photo-1542744095-291d1f67b221?q=80&w=1200" alt="Coworking Guatemala" class="rounded-3xl shadow-2xl" />
+          <img src="https://images.unsplash.com/photo-1542744095-291d1f67b221?auto=format&fit=crop&q=80&w=1200" alt="Coworking en Guatemala" class="rounded-3xl shadow-2xl" />
         </div>
       </div>
     </section>
 
-    <section class="py-20 bg-gray-50 px-6">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl font-bold text-center mb-12">Preguntas Frecuentes</h2>
-        <div class="space-y-6">
-          <div class="bg-white p-6 rounded-2xl shadow-sm">
-            <h3 class="font-bold text-lg mb-2">¿Precio del pase diario?</h3>
-            <p class="text-gray-600">Desde USD$ 15 por día con todo incluido.</p>
+    <section id="planes" class="py-12 bg-white">
+      <div class="max-w-7xl mx-auto px-6 md:px-12">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-8 bg-blue-50 p-8 md:p-12 rounded-3xl">
+          <div class="max-w-xl">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">Eficiencia para tu presupuesto</h2>
+            <p class="text-gray-600">Ofrecemos acceso a nuestro cowork con planes diseñados para escalar contigo.</p>
           </div>
-          <div class="bg-white p-6 rounded-2xl shadow-sm">
-            <h3 class="font-bold text-lg mb-2">¿Dónde están ubicados?</h3>
-            <p class="text-gray-600">En Edificio Zona Pradera, Torre 2, Zona 10.</p>
+          <div class="flex flex-col items-center bg-white p-6 rounded-2xl shadow-sm border border-blue-100 min-w-[250px]">
+            <span class="text-gray-500 uppercase tracking-widest text-xs font-bold mb-2">Pase Diario</span>
+            <div class="flex items-baseline gap-1">
+              <span class="text-gray-900 text-lg font-medium">Desde</span>
+              <span class="text-blue-600 text-5xl font-extrabold">USD$15</span>
+            </div>
+            <a href="https://wa.me/50223010800" class="mt-6 w-full bg-gray-900 text-white text-center py-3 rounded-xl font-semibold">Obtener Pase</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicios" class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6 md:px-12">
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
+                <h3 class="text-xl font-bold mb-4 text-blue-600">Workspace por día</h3>
+                <p class="text-gray-600">Acceso inmediato, internet de alta velocidad y café ilimitado por USD$15.</p>
+            </div>
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
+                <h3 class="text-xl font-bold mb-4 text-blue-600">Salas de Reuniones</h3>
+                <p class="text-gray-600">Privacidad y tecnología en Zona 10 para proyectar autoridad ante tus clientes.</p>
+            </div>
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
+                <h3 class="text-xl font-bold mb-4 text-blue-600">Oficinas Virtuales</h3>
+                <p class="text-gray-600">Dirección comercial y fiscal de prestigio sin los gastos de un arriendo tradicional.</p>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="py-20 bg-white">
+      <div class="max-w-4xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Preguntas Frecuentes</h2>
+        <div class="space-y-8">
+          <div class="border-b border-gray-100 pb-6">
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">¿Cuál es el precio de un pase diario de cowork en Guatemala?</h3>
+            <p class="text-gray-600">El precio inicia desde <strong>USD$ 15 por día</strong>, incluyendo acceso a estaciones ergonómicas, internet simétrico y café premium ilimitado.</p>
+          </div>
+          <div class="border-b border-gray-100 pb-6">
+            <h3 class="text-xl font-semibold text-gray-900 mb-3">¿Ofrecen salas de reuniones en Zona 10?</h3>
+            <p class="text-gray-600">Sí, contamos con salas profesionales en el <strong>Edificio Zona Pradera, Torre 2</strong>, equipadas con pantallas de alta definición.</p>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <a 
-    href="https://wa.me/50223010800" 
-    class="fixed bottom-6 right-6 bg-[#25d366] text-white p-4 rounded-full shadow-2xl z-50"
-  >
-    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-  </a>
+  <footer class="bg-gray-900 text-gray-400 py-12 px-6 md:px-12">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div>
+        <h3 class="text-xl font-bold text-white mb-4">COWORK EN GUATEMALA</h3>
+        <p class="text-sm">Boulevard Los Proceres 24-69 zona 10, Edificio Zona Pradera, Torre 2, Oficina 1108</p>
+        <p class="mt-2 font-bold">PBX: 2301-0800</p>
+      </div>
+      <div class="md:text-right text-sm">
+        <p>&copy; {new Date().getFullYear()} Cowork en Guatemala. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script is:inline>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn?.addEventListener('click', () => {
+      mobileMenu?.classList.toggle('hidden');
+    });
+  </script>
 </Layout>
