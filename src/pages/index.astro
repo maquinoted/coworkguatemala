@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-// Puedes importar componentes si creas archivos separados (ej. import Header from '../components/Header.astro';)
 import '../styles/global.css'; 
 ---
 
@@ -10,22 +9,35 @@ import '../styles/global.css';
   keywords="coworking Guatemala, oficinas compartidas Guatemala, espacios de trabajo flexibles, oficinas modernas, alquiler salas reuniones, comunidad emprendedores Guatemala, Zona 10, Zona 4"
   ogTitle="Cowork Guatemala: El Futuro del Trabajo Comienza Aquí"
   ogDescription="Espacios flexibles, tecnología de punta y comunidad en el corazón de Guatemala."
-  ogImage="https://coworkguatemala.com/hero-cowork-gt.jpg" // Asegúrate de tener esta imagen en tu carpeta public/
+  ogImage="https://coworkguatemala.com/hero-cowork-gt.jpg"
   ogUrl="https://coworkguatemala.com/"
 >
-  <header class="bg-white shadow-sm py-4 px-6 md:px-12 border-b border-gray-100">
+  <header class="bg-white shadow-sm py-4 px-6 md:px-12 border-b border-gray-100 sticky top-0 z-50">
     <nav class="max-w-7xl mx-auto flex justify-between items-center">
       <a href="/" class="text-2xl font-bold text-gray-900 tracking-tight">
         COWORK <span class="text-blue-600">GUATEMALA</span>
       </a>
+      
       <div class="hidden md:flex space-x-8">
         <a href="#ubicaciones" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Ubicaciones</a>
         <a href="#planes" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Planes</a>
         <a href="#servicios" class="text-gray-600 hover:text-blue-600 font-medium transition-colors">Servicios</a>
         <a href="#contacto" class="bg-blue-600 text-white px-5 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors">Contacto</a>
       </div>
-      <button class="md:hidden text-gray-600 text-2xl">☰</button>
+
+      <button id="menu-btn" class="md:hidden text-gray-600 text-3xl focus:outline-none">
+        ☰
+      </button>
     </nav>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute left-0 w-full shadow-xl">
+      <div class="flex flex-col p-6 space-y-4">
+        <a href="#ubicaciones" class="mobile-link text-gray-600 font-medium text-lg">Ubicaciones</a>
+        <a href="#planes" class="mobile-link text-gray-600 font-medium text-lg">Planes</a>
+        <a href="#servicios" class="mobile-link text-gray-600 font-medium text-lg">Servicios</a>
+        <a href="#contacto" class="mobile-link bg-blue-600 text-white px-5 py-3 rounded-lg font-medium text-center">Contacto</a>
+      </div>
+    </div>
   </header>
 
   <main>
@@ -39,12 +51,12 @@ import '../styles/global.css';
             Espacios flexibles, tecnología de punta y una vibrante comunidad en el corazón de Guatemala.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-            <a href="#explorar" class="bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-blue-700 transition-colors shadow-lg">
+            <a href="#explorar" class="bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-blue-700 transition-colors shadow-lg text-center">
               Explorar Espacios
             </a>
             <a href="https://wa.me/502XXXXXXXX?text=Hola,%20me%20interesa%20reservar%20un%20tour%20en%20Cowork%20Guatemala." 
                target="_blank" 
-               class="bg-white text-blue-600 border-2 border-blue-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-blue-50 transition-colors shadow-md">
+               class="bg-white text-blue-600 border-2 border-blue-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-blue-50 transition-colors shadow-md text-center">
               Reservar Tour
             </a>
           </div>
@@ -58,8 +70,7 @@ import '../styles/global.css';
         </div>
       </div>
     </section>
-
-    </main>
+  </main>
 
   <footer class="bg-gray-900 text-gray-400 py-12 px-6 md:px-12">
     <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -102,4 +113,22 @@ import '../styles/global.css';
       &copy; {new Date().getFullYear()} Cowork Guatemala. Todos los derechos reservados.
     </div>
   </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    // Abrir/Cerrar menú al dar clic en el botón
+    menuBtn?.addEventListener('click', () => {
+      mobileMenu?.classList.toggle('hidden');
+    });
+
+    // Cerrar menú al dar clic en cualquier enlace (para que no estorbe al navegar)
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu?.classList.add('hidden');
+      });
+    });
+  </script>
 </Layout>
